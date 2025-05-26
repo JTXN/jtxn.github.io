@@ -114,7 +114,7 @@ class Pogo
 
             $htmlContent = file_get_contents("pogodb/$type.html");
 
-            $nameToIdMap = json_decode(file_get_contents('api-data/data/api/v2/name-to-id.json'), true);
+            $nameToIdMap = json_decode(file_get_contents('name-to-id.json'), true);
 
             libxml_use_internal_errors(true); // Suppress HTML5 warnings
             $doc = new DOMDocument();
