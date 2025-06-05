@@ -1,0 +1,29 @@
+{
+   "schema": "./pokemon-schema.json",
+   "id": 8,
+   "name": "wartortle",
+   "types": [
+      {
+         "type": {
+            "name": "water"
+         }
+      }
+   ],
+   "shiny": true,
+   "tier_ranking": [
+   ],
+   "weakness": [
+      {
+         "type": {
+            "name": "electric",
+            "amount": "60%"
+         }
+      },
+      {
+         "type": {
+            "name": "grass",
+            "amount": "60%"
+         }
+      }
+   ]
+}

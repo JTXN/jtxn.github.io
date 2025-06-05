@@ -1,0 +1,33 @@
+{
+   "id": 5,
+   "name": "charmeleon",
+   "types": [
+      {
+         "type": {
+            "name": "fire"
+         }
+      }
+   ],
+   "shiny": true,
+   "tier_ranking": [],
+   "weakness": [
+      {
+         "type": {
+            "name": "ground",
+            "amount": "60%"
+         }
+      },
+      {
+         "type": {
+            "name": "rock",
+            "amount": "60%"
+         }
+      },
+      {
+         "type": {
+            "name": "water",
+            "amount": "60%"
+         }
+      }
+   ]
+}

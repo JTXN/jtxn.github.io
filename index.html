@@ -1,0 +1,86 @@
+<?php require_once 'functions.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Pokemon Go - Meta</title>
+   <link rel="stylesheet" href="main.css">
+</head>
+
+<?php
+$PoGo = new Pogo();
+?>
+
+<body>
+   <header>
+      <h1>PoGo SU</h1>
+      <h2>by Jaein</h2>
+   </header>
+
+   <section class="main">
+      <div id="output"></div>
+      <div id="raid-pokemon" class="hidden"><?php echo $output ?? ""; ?></div>
+      <div id="main">
+         <div class="col">
+            <textarea id="ids"></textarea>
+            <button id="clearButton">Clear</button>
+            <button id="copyButton">Copy</button>
+         </div>
+         <div class="col">
+            <h4>Presets</h4>
+            <div id="presets">
+               <button id="raidButton">Top 30 Raiders</button>
+               <button id="glButton">Great League</button>
+               <button id="ulButton">Ultra League</button>
+               <button id="trashButton">Trash</button>
+            </div>
+         </div>
+         <div class="col">
+            <h4>Filters</h4>
+            <div id="filters">
+               <button id="distance-20">Distance -20 </button>
+               <button id="distance20-">Distance 20+</button>
+               <button id="costume">Costume</button>
+               <button id="!costume" class="exclude">Exclude Costume</button>
+               <button id="favorite">Faved</button>
+               <button id="!favorite" class="exclude">Exclude Faved</button>
+               <button id="shadow">Shadow</button>
+               <button id="!shadow" class="exclude">Exclude Shadow</button>
+               <button id="shiny">Shiny</button>
+               <button id="!shiny" class="exclude">Exclude Shiny</button>
+               <button id="#">Tagged</button>
+               <button id="!#" class="exclude">Exclude Tagged</button>
+               <button id="traded">Traded</button>
+               <button id="!traded" class="exclude">Exclude Traded</button>
+               <button id="eggsonly">Babies</button>
+               <button id="background">Background
+                  <span class="tooltip-text" role="tooltip">special/location background</span>
+               </button>
+               <button id="evolve">Can Evolve</button>
+               <button id="dynamax">Dynamax</button>
+               <button id="legendary">Legendary</button>
+               <button id="ultrabeast">Ultra Beast</button>
+               <button id="lucky">lucky</button>
+               <button id="mythical">mythical</button>
+               <button id="day365-730">L-O 10%
+                  <span class="tooltip-text" role="tooltip">Lucky odds 10%</span>
+               </button>
+               <button id="day731-1095">L-O 15%
+                  <span class="tooltip-text" role="tooltip">Lucky odds 15%</span>
+               </button>
+               <button id="day1096-">L-O 20%
+                  <span class="tooltip-text" role="tooltip">Lucky odds 20%</span>
+               </button>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section id="pokemons"></section>
+
+   <script src="main.js"></script>
+</body>
+
+</html>

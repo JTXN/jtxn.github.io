@@ -1,0 +1,19 @@
+{
+   "id": 1,
+   "name": "bulbasaur",
+   "types": [
+      {
+         "type": {
+            "name": "grass"
+         }
+      },
+      {
+         "type": {
+            "name": "poison"
+         }
+      }
+   ],
+   "shiny": true,
+   "tier_ranking": [],
+   "weakness": []
+}

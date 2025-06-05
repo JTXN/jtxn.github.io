@@ -1,0 +1,19 @@
+{
+   "id": 2,
+   "name": "ivysaur",
+   "types": [
+      {
+         "type": {
+            "name": "grass"
+         }
+      },
+      {
+         "type": {
+            "name": "poison"
+         }
+      }
+   ],
+   "shiny": true,
+   "tier_ranking": [],
+   "weakness": []
+}

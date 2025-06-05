@@ -22,27 +22,35 @@ class Pogo
         'steel',
         'water'
     ];
-    public $cachedFile = 'cached_pokemon_ids.json';
+    public $cachedFile = 'raid.json';
     public $raidIds = [];
+
+    /**
+     * display_all_pokemon
+     * format_range_numbers
+     * store_cached_pokemon
+     * get_all_raid_pokemon_from_db
+     * get_cached_raid_pokemon
+     * invert_selection
+     * clean_name
+     * */
 
     public function __construct()
     {
-        // echo "FOO BAR";
-        $this->raidIds = $this->get_cached_raid_pokemon();
+        // $this->raidIds = $this->get_cached_raid_pokemon();
     }
 
-    public function getbyid($id)
+    public function display_all_pokemon()
     {
-        $path = "api-data/data/api/v2/pokemon/" . $id;
-        if (!file_exists($path)) {
-            return;
+        if (!file_exists("name_to_id.json")) return;
+        $pokemons = json_decode(file_get_contents('name_to_id.json'), true);
+        foreach ($pokemons as $pokemon => $id) {
+            $img_url = "images/{$id}.png";
+            echo "<button data-id='$id'><span>$id</span>";
+            echo "<img src='$img_url' width='64' height='64'>";
+            echo $pokemon;
+            echo "</button>";
         }
-        $json = json_decode(file_get_contents("$path/index.json"), true);
-
-        echo "$id :  {$json['name']} <br>";
-
-        // echo "<img src='{$json['sprites']['front_default']}' height='64' width='64'>";
-
     }
 
     public function format_range_numbers(array $numbers): array
@@ -93,69 +101,15 @@ class Pogo
             if (is_array($allIds)) {
                 return $allIds;
             } else {
-                $allIds = $this->get_all_raid_pokemon_from_db();
+                /* $allIds = $this->get_all_raid_pokemon_from_db();
                 $this->store_cached_pokemon($allIds);
-                return $allIds;
+                return $allIds; */
             }
         } else {
             echo "Cached Pokemon IDs file not found. You'll need to run the data extraction again.\n";
             return;
         }
     }
-
-    public function get_all_raid_pokemon_from_db()
-    {
-        $pokemonNames = [];
-        $pokemonIds = [];
-        $allIds = [];
-
-        foreach ($this->types as $type) {
-            if (!file_exists("pogodb/$type.html")) continue;
-
-            $htmlContent = file_get_contents("pogodb/$type.html");
-
-            $nameToIdMap = json_decode(file_get_contents('name-to-id.json'), true);
-
-            libxml_use_internal_errors(true); // Suppress HTML5 warnings
-            $doc = new DOMDocument();
-            $doc->loadHTML($htmlContent);
-            libxml_clear_errors();
-
-            $tbody = $doc->getElementsByTagName('tbody')->item(0);
-
-            if ($tbody) {
-                $max = 30;
-                $count = 0;
-                $rows = $tbody->getElementsByTagName('tr');
-
-                foreach ($rows as $row) {
-                    if ($count++ >= $max) {
-                        break;
-                    }
-                    $link = $row->getElementsByTagName('a')->item(0);
-                    if ($link) {
-                        $name = $this->clean_name($link->textContent);
-
-                        if (isset($pokemonNames[$name])) {
-                            continue;
-                        }
-
-                        $pokemonNames[$name] = true;
-
-                        $id = $nameToIdMap[$name] ?? null;
-
-                        if ($id === null) {
-                            continue;
-                        }
-
-                        $allIds[] = $id; // Push ID into array
-                    }
-                }
-            }
-        }
-        return $allIds;
-    }
-
 
 
 
@@ -165,7 +119,7 @@ class Pogo
         return array_values(array_diff($all, $selected));
     }
 
-    public function clean_name($uncleanedname)
+    public static function clean_name($uncleanedname)
     {
         if (!$uncleanedname) return;
         $name = strtolower(trim($uncleanedname));
@@ -182,4 +136,4 @@ class Pogo
         $name = trim($name);
         return $name;
     }
-}
+} // class

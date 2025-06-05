@@ -1,0 +1,28 @@
+{
+   "schema": "./pokemon-schema.json",
+   "id": 7,
+   "name": "squirtle",
+   "types": [
+      {
+         "type": {
+            "name": "water"
+         }
+      }
+   ],
+   "shiny": true,
+   "tier_ranking": [],
+   "weakness": [
+      {
+         "type": {
+            "name": "electric",
+            "amount": "60%"
+         }
+      },
+      {
+         "type": {
+            "name": "grass",
+            "amount": "60%"
+         }
+      }
+   ]
+}

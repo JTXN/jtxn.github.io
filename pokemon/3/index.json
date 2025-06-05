@@ -1,0 +1,36 @@
+{
+   "id": 3,
+   "name": "venusaur",
+   "types": [
+      {
+         "type": {
+            "name": "grass"
+         }
+      },
+      {
+         "type": {
+            "name": "poison"
+         }
+      }
+   ],
+   "shiny": true,
+   "tier_ranking": [
+      {
+         "name": "raid attacker",
+         "tier": "F"
+      },
+      {
+         "name": "gym defender",
+         "tier": "C"
+      },
+      {
+         "name": "grass type",
+         "tier": "A"
+      },
+      {
+         "name": "poison type",
+         "tier": "B"
+      }
+   ],
+   "weakness": []
+}

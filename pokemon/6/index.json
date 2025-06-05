@@ -1,0 +1,38 @@
+{
+   "id": 6,
+   "name": "charizard",
+   "types": [
+      {
+         "type": {
+            "name": "fire"
+         }
+      },
+      {
+         "type": {
+            "name": "flying"
+         }
+      }
+   ],
+   "shiny": true,
+   "tier_ranking": [],
+   "weakness": [
+      {
+         "type": {
+            "name": "electric",
+            "amount": "60%"
+         }
+      },
+      {
+         "type": {
+            "name": "rock",
+            "amount": "156%"
+         }
+      },
+      {
+         "type": {
+            "name": "water",
+            "amount": "60%"
+         }
+      }
+   ]
+}
