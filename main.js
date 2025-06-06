@@ -198,9 +198,9 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
   // Presets
   handlePresetButton( 'raidButton', 'presets/raid.json', 'Top 30 raid Pokemons loaded. Selected 3-4 star and above 2000CP.', "3*,4*&2000cp-&" );
-  handlePresetButton( 'glButton', 'presets/great_league.json', 'Top 80 Great League Pokemons list loaded.', "0attack&3-4hp&3-4defense&" );
-  handlePresetButton( 'ulButton', 'presets/ultra_league.json', 'Top 80 Ultra League Pokemons list loaded.', "0-1attack&3-4hp&3-4defense&" );
-  handlePresetButton( 'trashButton', 'presets/trash.json', 'Trash list loaded. Excludes 4 stars and shiny.', "!4*&!shiny&" );
+  handlePresetButton( 'glButton', 'presets/great_league.json', 'Top 80 Great League Pokemons list loaded for PVP IVs and 1500 CP cap.', "0attack&3-4hp&3-4defense&cp-1500&" );
+  handlePresetButton( 'ulButton', 'presets/ultra_league.json', 'Top 80 Ultra League Pokemons list loaded for PVP IVs and 2500 CP cap.', "0-1attack&3-4hp&3-4defense&cp-2500&" );
+  handlePresetButton( 'trashButton', 'presets/trash.json', 'Trash list loaded. Excludes 2016, 2017, hundos and shinies.', "!4*&!shiny&!year2016&!year2017&" );
 
   // Filter Button
   filterButtons.forEach( btn => btn.addEventListener( 'click', () => toggleFilterButton( btn ) ) );
@@ -209,7 +209,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
   $( 'copyButton' ).addEventListener( 'click', async () => {
     try {
       await navigator.clipboard.writeText( textbox.value );
-      alert( 'Text copied to clipboard!' );
+      msgHandler("✅ Successfully copied to clipboard.")
     } catch {
       alert( 'Unable to copy text.' );
     }
