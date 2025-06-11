@@ -197,7 +197,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
   document.addEventListener( 'mouseup', () => isDragging = false );
 
   // Presets
-  handlePresetButton( 'raidButton', 'presets/raid.json', 'Top 30 raid Pokemons loaded. Selected 3-4 star and above 2000CP.', "3*,4*&2000cp-&" );
+  handlePresetButton( 'raidButton', 'presets/raid.json', 'Top 30 raid Pokemons loaded. Selected 3-4 star and above 2000CP.', "3*,4*&cp2000-&" );
   handlePresetButton( 'glButton', 'presets/great_league.json', 'Top 80 Great League Pokemons list loaded for PVP IVs and 1500 CP cap.', "0attack&3-4hp&3-4defense&cp-1500&" );
   handlePresetButton( 'ulButton', 'presets/ultra_league.json', 'Top 80 Ultra League Pokemons list loaded for PVP IVs and 2500 CP cap.', "0-1attack&3-4hp&3-4defense&cp-2500&" );
   handlePresetButton( 'trashButton', 'presets/trash.json', 'Trash: Under 20km + excludes 2016, 2017, hundos, costumes and shinies.', "!4*&!shiny&!costume&!year2016&!year2017&distance-20&" );
